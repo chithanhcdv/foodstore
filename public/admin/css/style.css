@@ -1,0 +1,414 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} 
+
+/* body */
+body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .body {
+        height: 100%;
+    }
+
+/*header*/
+header .logo{
+    width: 50%;
+    height: 100%;
+}
+
+header .header-bot{
+   background-color: skyblue;
+}
+
+.search-input{
+   margin-top: 30px;
+}
+
+.header-icon{
+    font-size: 2em;
+}
+
+#bell-icon{
+    margin-top: 30px;
+    color: black;
+}
+
+#letter-icon{
+    margin-top: 30px;
+    color: black;
+}
+
+#user-icon{
+    margin-top: 25px;
+}
+
+.login{
+    text-decoration: none;
+    color: black;
+}
+
+.login:hover{
+    color: red;
+}
+
+.logout{
+    text-decoration: none;
+}
+
+/* nav */
+.nav-item a{
+    font-size: large;
+    color:white;
+    margin-top: 5px;
+}
+
+.nav-item a:hover{
+    background-color: red;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+main .navbar {
+        
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        max-width: 100%;
+        height: 100%;
+        box-shadow: 5px 10px 5px #888888;
+    }
+
+/*main*/
+main{
+    margin-top: 20px;
+    height: 100%;
+}
+
+main h4{
+    text-align: center;
+}
+
+
+/*login-form*/
+#login-form h3{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.form-control{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#login-button{
+    margin-top: 20px;
+    width: 200px;
+}
+
+#login-form input{
+    margin-top: 20px
+}
+
+/* Delete user */
+.delete-button{
+   width: 40%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 50px; 
+   margin-bottom: 40px;
+}
+
+#delete-main .user-image{
+    width: 100%;
+    height: 100%;
+}
+
+/* Load user */
+.load-main h1{
+    text-align: center;
+}
+
+.load-main img{
+    height: 120px;
+    width: 120px; 
+    border-radius: 150px;
+}
+
+.load-main .add-link{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #333;
+    width: 220px;
+    border-radius: 5px;  
+    height: 40px;
+    padding-top: 7px;
+}
+
+/* Edit user */
+.edit-form {
+    border:1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+}
+
+.edit-form h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 10px 10px 0px 0px;
+    background-color: whitesmoke;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.edit-form label {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.edit-form label strong {
+    margin-right: 10px;
+    min-width: 120px;
+}
+
+.edit-form .edit-user-input {
+    width: 100%;
+}
+
+.edit-form img {
+    border-radius: 200px;
+    width: 80px;
+    height: 80px; 
+    margin-bottom: 10px;
+}
+
+.edit-button{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+
+/* Detail user */
+.card-body img{
+    width: 100%;
+    height: 100%;
+    border-radius: 500px;
+}
+
+/* Load product */
+.load-main .load-product-image{
+    border-radius: 0px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.load-main button{
+    width: 100%;
+}
+
+.load-main a{
+    text-decoration: none;
+    color: white;
+}
+
+.load-main a:hover{
+    color: red;
+}
+
+.load-main .delete-link, .edit-link, .detail-link{
+    margin-bottom: 5px;
+}
+
+.load-main table{
+    text-align: center;
+    max-width: 100%;
+}
+
+.load-main .load-product-name{
+    max-width: 150px;
+    word-wrap: break-word;
+}
+
+.load-main .add-link{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color:dodgerblue;
+    width: 220px;
+    border-radius: 5px;  
+    height: 40px;
+    padding-top: 7px;
+}
+
+@media only screen and (max-width:440px){
+    .load-main thead{
+        display: none;
+    }
+
+    .load-main tbody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .load-main tr{
+        display: flex;
+        flex-direction: column;
+        border: white;
+        border-bottom: 2px solid whitesmoke;
+    }
+
+    .edit-form .edit-product-input{
+        width: 100%;
+}
+}
+
+
+/* Edit product */
+.edit-form .checkbox-edit{
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-column-gap: 40px;
+   grid-row-gap: 5px;
+}
+
+.edit-form .checkbox-input input{
+    margin-right: 5px; 
+}
+
+.edit-form .edit-product-input{
+    width: 300px;
+}
+
+.edit-form textarea{
+    height: 150px;
+}
+
+.edit-form .edit-product-image{
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+}
+
+ 
+/* Add product */
+.add-form {
+    border:1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+}
+
+.add-form h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 10px 10px 0px 0px;
+    background-color: whitesmoke;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.add-form label {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.add-form label strong {
+    margin-right: 10px;
+    min-width: 120px;
+}
+
+.add-form .add-product-input {
+    width: 300px;
+}
+
+.add-form textarea{
+    height: 150px;
+}
+
+.add-form .checkbox-edit{
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-column-gap: 40px;
+   grid-row-gap: 5px;
+}
+
+.add-form .checkbox-input input{
+    margin-right: 5px;   
+}
+
+.add-form img {
+    border-radius: 200px;
+    width: 80px;
+    height: 80px; 
+    margin-bottom: 10px;
+}
+
+.add-button{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+#user-add-form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#user-add-form .form-group{
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+#user-add-form button{
+    text-align: center;
+}
+
+/* Detail product */
+#detail-product img{
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    width: 100%;
+    height: 100%;
+}
+
+/* Delete product */
+#product-delete-form img{
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+}
+
+
+/* Edit order */
+#order-edit-form strong{
+    width: 200px;
+}
+
+
+

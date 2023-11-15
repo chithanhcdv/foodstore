@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Admin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="/../public/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="">
+                        <img src="" alt=""  class="logo">
+                        </a>
+                    </div>                 
+                    <div class="col-md-6">
+                        <div class="input-group mb-3 search-input">
+                            <form action="" class="input-group">
+                                <input type="text" class="form-control" placeholder="Hãy nhập gì đó..." aria-label="Recipient's username" aria-describedby="basic-addon2" id="searchInput">
+                                <button class="input-group-text"><span class="" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span></button>
+                            </form>
+                        </div>
+                    </div>      
+                    <div class="col-md-2">
+                        <div class="header-icon" id="phone-icon">
+                            <i class="fa-solid fa-phone fa-3x"></i>
+                            <label>0945855311</label>
+                        </div>
+                    </div>    
+                    <div class="col-md-2" id="header-right">
+                        <div class="d-flex align-items-center">
+                            <a href=""><i class="fa-solid fa-shopping-bag fa-3x header-icon" id="cart-icon"></i></a>
+                            <div class="dropdown">
+                                <button class="btn btn" type="button" data-toggle="dropdown">
+                                    <i class="fa-solid fa-user fa-3x header-icon" id="user-icon"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                        
+                                </ul>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col">
+                        <nav class="navbar navbar-expand-lg ">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Khuyến mãi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Về Cửa Hàng</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Liên Hệ</a>
+                                </li>
+                                </ul>
+                            </div>
+                        </nav>    
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="order-main"> 
+        <div class="container">
+            <div class="row">
+                <h1>Thanh toán</h1>
+                <div class="col-md-7">
+                    <form id="order-form" method="post">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Thông tin khách hàng</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label><strong>Họ tên</strong></label>      
+                                    <input name="username" type="text" class="form-control add-product-input" required>
+                                </div>
+                            <div class="mb-3">
+                                    <label><strong>Địa chỉ</strong></label>      
+                                    <input name="address" type="text" class="form-control add-product-input" required>
+                                </div>
+                            <div class="mb-3">
+                                    <label><strong>Số điện thoại</strong></label>      
+                                    <input name="phone" type="tel" class="form-control add-product-input" required>
+                                </div>
+                            <div class="mb-3">
+                                    <label><strong>Email</strong></label>      
+                                    <input name="email" type="email" class="form-control add-product-input" required>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <h4>Chọn Phương Thức Thanh Toán</h4>
+                                <div class="method">
+                                    <input name="name" type="radio" class="" placeholder="Nhập tên mới"> Tiền mặt
+                                    <br>
+                                    <input name="name" type="radio" class="" placeholder="Nhập tên mới"> Chuyển khoản qua ngân hàng
+                                    <br>
+                                    <input name="name" type="radio" class="" placeholder="Nhập tên mới"> Qua Momo hoặc ZaloPay
+                                </div>
+                            </div>     
+                            <div class="card-footer">
+                                <h4>Chọn Phương Thức Vận Chuyển</h4>
+                                <div class="ship">
+                                    <input name="name" type="radio" class="" placeholder="Nhập tên mới"> Giao hàng tiêu chuẩn (3-5 ngày)
+                                    <br>
+                                    <input name="name" type="radio" class="" placeholder="Nhập tên mới"> Giao nhanh (1-2 ngày), Phí +20.000đ
+                                    <br>
+                                </div>
+                            </div>
+                        </div>                   
+                        <div class="order-button">
+                            <button type="submit" class="btn btn-primary">Đặt Hàng</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Giỏ Hàng Của Bạn</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-link">a</div>
+                            <hr>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </main> 
+
+    <hr>
+           
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="info">
+                        <p>Thông tin liên hệ</p>
+                        <p>Giới thiệu cửa hàng</p>
+                        <p>Hệ thống cửa hàng</p>
+                        <p>Trung tâm hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="info">
+                        <p><strong>Tư vấn hỗ trợ</strong></p>
+                        <p>Gọi điện mua hàng</p>
+                        <p>Gọi điện khiếu nại</p>
+                        <p>Gọi điện hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="info">
+                        <p><strong>Kết nối với chúng tôi</strong></p>
+                        <p><a href=""><i class="fa-brands fa-facebook"></i> <strong>Facebook</strong></a></p>
+                        <p><a href=""><i class="fa-brands fa-twitter"></i> <strong>Twitter</strong></a></p>
+                        <p><a href=""><i class="fa-brands fa-youtube"></i><strong>Youtube</strong></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-end">
+            <div class="container">
+                <div class="row">
+                    <p id="copyright">&copy Bản quyền thuộc về cửa hàng thức ăn nhanh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    </script>
+</body>
+</html>
