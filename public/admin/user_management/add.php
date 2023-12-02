@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             $target_file = $target_directory . basename($file_name);
 
             // Không di chuyển file, chỉ cập nhật đường dẫn trong cơ sở dữ liệu
-            $target_file_in_db = "/../images/user/" . basename($file_name);
+            $target_file_in_db = "/images/user/" . basename($file_name);
 
             move_uploaded_file($file_tmp, $target_file);
         } else {
