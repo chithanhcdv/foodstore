@@ -40,17 +40,17 @@ if(isset($_GET['name'])){
                     </div>
                     <div class="col-lg-7 mt-3">
                         <div class="item-info">
-                            <h1>'. htmlspecialchars($default_name) .'</h1> 
-                            <p><h3>Loại: '. htmlspecialchars($row['type']) .'</h3></p>';
+                            <h2>'. htmlspecialchars($default_name) .'</h2> 
+                            <p><h4>Loại: '. htmlspecialchars($row['type']) .'</h4></p>';
                             if($row['sale'] > 0){
                             echo'
                             <div class="price">
-                                <p><h3>'. number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</h3></p>
-                                <p><h3><del>'. number_format(htmlspecialchars($row['sale']), 0, ',', '.') . 'đ</del></h3></p>
+                                <p><h2 class="text-danger">'. number_format(htmlspecialchars($row['sale']), 0, ',', '.') . 'đ</h2></p>
+                                <p><h2><del>'. number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</del></h2></p>
                             </div>';
                             } else{
                                 echo'
-                                <p><h3>'. number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</h3></p>';
+                                <p><h2>'. number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</h2></p>';
                             }
                             echo'
                             <form method="post" action="/../cart/cart.php" class="addToCart-form">

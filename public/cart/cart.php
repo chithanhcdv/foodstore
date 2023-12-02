@@ -38,7 +38,7 @@ require_once dirname(__DIR__) . '/../partials/header.php'
                                                 <tr>
                                                     <th scope="col">Hình ảnh</th>
                                                     <th scope="col">Tên</th>
-                                                    <th scope="col">Số lượng</th>
+                                                    <th scope="col" class="quantity">Số lượng</th>
                                                     <th scope="col">Đơn giá</th>
                                                     <th scope="col">Thành tiền</th>
                                                 </tr>
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-$query =   "SELECT cart.id_cart, cart.quantity, product.image, product.name, product.price, product.id_product 
+$query =   "SELECT cart.id_cart, cart.quantity, product.image, product.name, product.price, product.id_product , product.sale
             FROM cart 
             INNER JOIN product ON cart.id_product = product.id_product 
             WHERE cart.id_user=?";
@@ -116,7 +116,11 @@ try{
     $total = 0;
 
     while($row = $statement->fetch()){
-        $subtotal = $row['price'] * $row['quantity'];
+        if($row['sale'] > 0){
+            $subtotal = $row['sale'] * $row['quantity'];
+        } else{
+            $subtotal = $row['price'] * $row['quantity'];
+        }
         $total = $total + $subtotal;
         echo'
             <tr>
@@ -128,10 +132,16 @@ try{
                         <input type="number" value="' . htmlspecialchars($row['quantity']) . '" name="quantity" class="form-control quantityInput" min="1">
                         <button type="submit" class="btn btn-primary update-quantity-button">Cập nhật</button>
                     </td>
-                </form>
-                <td>' . number_format(htmlspecialchars($row['price']), '0', ',', '.') .'đ</td>
-                <td>' . number_format(htmlspecialchars($subtotal), '0', ',', '.') .'đ</td>
-                <td>
+                </form>';
+                
+        if($row['sale'] > 0){
+        echo'   <td>' . number_format(htmlspecialchars($row['sale']), '0', ',', '.') .'đ</td>';
+        } else{
+        echo'   <td>' . number_format(htmlspecialchars($row['price']), '0', ',', '.') .'đ</td>';    
+        }
+        echo'   <td>' . number_format(htmlspecialchars($subtotal), '0', ',', '.') .'đ</td>';
+
+        echo'   <td>
                     <form method="post" action="">
                         <input type="hidden" name="id_product" value="' . htmlspecialchars($row['id_product']) . '">
                         <button type="submit" class="btn btn-danger">Xóa</button>

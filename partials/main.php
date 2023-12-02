@@ -20,8 +20,8 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="scroll">
-                            <img src="/../images/banner/banner4.png">
-                            <img src="/../images/banner/banner5.png">
+                            <img src="/../images/banner/banner4.png" id="scroll-img1">
+                            <img src="/../images/banner/banner5.png" id="scroll-img2">
                         </div>
                     </div>           
                     <div class="col-lg-10">

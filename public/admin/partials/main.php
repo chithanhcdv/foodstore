@@ -19,9 +19,14 @@ if (!isset($_SESSION['username_admin'])) {
         while($row = $statement->fetch()){
             $totalUserCount++;    
         }
-        echo'   <div class="col">
-                    <h4>Số lượng khách hàng</h4>
-                    <h4>'. htmlspecialchars($totalUserCount) .'</h4>   
+        echo'   <div class="col-lg-3 mb-3">
+                    <div id="user-total" class="total">
+                        <h4>Số lượng khách hàng</h4>
+                        <div class="flex-total">
+                            <p><i class="fa-solid fa-users fa-xl"></i></p>
+                            <h4>'. htmlspecialchars($totalUserCount) .'</h4>  
+                        </div>
+                    </div> 
                 </div>';
     } catch (PDOException $e) {
         $error_message = 'Không thể lấy dữ liệu';
@@ -36,9 +41,14 @@ if (!isset($_SESSION['username_admin'])) {
         while($row = $statement->fetch()){
             $totalProductCount++;
         }
-        echo'   <div class="col">
-                    <h4>Số lượng sản phẩm</h4>
-                    <h4>'. htmlspecialchars($totalProductCount) .'</h4>
+        echo'   <div class="col-lg-3 mb-3">
+                    <div id="product-total" class="total">
+                        <h4>Số lượng sản phẩm</h4>
+                        <div class="flex-total">
+                            <p><i class="fa-solid fa-book fa-xl"></i></p>
+                            <h4>'. htmlspecialchars($totalProductCount) .'</h4>
+                        </div>
+                    </div>
                 </div>
         ';
 
@@ -61,15 +71,26 @@ if (!isset($_SESSION['username_admin'])) {
             $totalOrderCount++;
             $total_amountOrderCount += $row['total_amount'];
         }
-        echo'   <div class="col">
-                    <h4>Số lượng đơn hàng</h4>
-                    <h4>'. htmlspecialchars($totalOrderCount) .'</h4>
+        echo'   <div class="col-lg-3 mb-3">
+                    <div id="order-total" class="total">
+                        <h4>Số lượng đơn hàng</h4>
+                        <div class="flex-total">
+                            <p><i class="fa-solid fa-cart-shopping fa-xl"></i></p>
+                            <h4>'. htmlspecialchars($totalOrderCount) .'</h4>
+                        </div>
+                    </div>
                 </div>
         ';
 
-        echo'   <div class="col">
-                    <h4>Tổng doanh thu</h4>
-                    <h4>'. number_format(htmlspecialchars($total_amountOrderCount), 0, ',', '.') . 'đ</h4>
+        echo'   <div class="col-lg-3 mb-3">
+                    <div id="money-total" class="total">
+                        <h4>Tổng doanh thu</h4>
+                        <div class="flex-total">
+                            <p><i class="fa-solid fa-dollar-sign fa-xl"></i></p>
+                            <h4>'. number_format(htmlspecialchars($total_amountOrderCount), 0, ',', '.') . 'đ</h4>
+                        </div>
+                    </div>
+                   
                 </div>
         ';
 

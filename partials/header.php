@@ -46,7 +46,25 @@ require_once __DIR__ . '/../partials/db_connect.php';
                     </div>    
                     <div class="col-md-2" id="header-right">
                         <div class="d-flex align-items-center">
-                            <a href="/..//cart/cart.php"><i class="fa-solid fa-shopping-bag fa-3x header-icon" id="cart-icon"></i></a>
+                            <?php 
+                            if(!isset($_SESSION['id_user'])){
+                                echo '<a href="/..//cart/cart.php"><i class="fa-solid fa-shopping-bag fa-3x header-icon" id="cart-icon"></i></a>';
+                            } else{
+                                $count=0;
+                                $query = "SELECT * FROM cart WHERE id_user=?";
+                                try{
+                                    $statement = $pdo->prepare($query);
+                                    $statement->execute([$_SESSION['id_user']]);
+                                    while($row=$statement->fetch()){
+                                        $count++;
+                                    }
+                                } catch(PDOException $e){
+                                    $pdo = $e->getMessage();
+                                }
+                                echo '<a href="/..//cart/cart.php"><i class="fa-solid fa-shopping-bag fa-3x header-icon" id="cart-icon"></i></a>
+                                    <p id="cart-count">'. $count .'</p>  ';
+                            }
+                            ?>
                             <div class="dropdown" id="dropdown-user">
                                 <button class="btn btn" type="button" data-toggle="dropdown">
                                     <i class="fa-solid fa-user fa-3x header-icon" id="user-icon"></i>

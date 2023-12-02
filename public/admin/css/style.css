@@ -16,13 +16,17 @@ body, html {
     }
 
 /*header*/
+#logo{
+    text-align: center;
+}
+
 header .logo{
     width: 50%;
     height: 100%;
 }
 
 header .header-bot{
-   background-color: skyblue;
+   background-color:deepskyblue;
 }
 
 .search-input{
@@ -62,15 +66,15 @@ header .header-bot{
 
 /* nav */
 .nav-item a{
-    font-size: large;
+    font-size: 20px;
     color:white;
-    margin-top: 5px;
 }
 
 .nav-item a:hover{
     background-color: red;
     margin-bottom: 5px;
     margin-left: 5px;
+    color: white;
 }
 
 main .navbar {
@@ -94,6 +98,35 @@ main h4{
     text-align: center;
 }
 
+.total{
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-family: cursive;
+}
+
+#user-total{
+    background-color: rgb(0, 170, 255);
+}
+
+#product-total{
+    background-color: rgba(0, 128, 2, 0.756);
+}
+
+#order-total{
+    background-color: orange;
+}
+
+#money-total{
+    background-color: crimson;
+}
+
+.flex-total{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
 
 /*login-form*/
 #login-form h3{
@@ -110,12 +143,14 @@ main h4{
 #login-form{
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 350px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
     margin-top: 30px;
+    padding: 20px;
+    box-shadow: 2px 2px 15px 2px;
 }
 
 #login-button{
@@ -144,6 +179,7 @@ main h4{
 /* Load user */
 .load-main h1{
     text-align: center;
+    font-family: cursive;
 }
 
 .load-main img{

@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 <?php
 if(isset($_SESSION['id_user'], $_POST['total_amount'], $_POST['ship_method'], $_POST['payment_method'], $_POST['name'],
     $_POST['address'], $_POST['phone'], $_POST['email'], $_POST['status'])){
-    $query = "SELECT date FROM orders WHERE id_user=?";
+    $query = "SELECT date FROM orders WHERE id_user=? ORDER BY date DESC";
     try{
         $statement=$pdo->prepare($query);
         $statement->execute([$_SESSION['id_user']]);

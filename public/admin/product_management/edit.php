@@ -112,7 +112,7 @@ if (isset($_GET['id_product']) && is_numeric($_GET['id_product']) && ($_GET['id_
                         </div>
                         <input type ="hidden" name="id_product" class="form-control edit-product-input" value="' . htmlspecialchars($_GET['id_product']) . '">
                         <div class="edit-button">
-                            <button type="submit" class="btn btn-primary" id="edit-button">Chỉnh Sửa Sản Phẩm</button>
+                            <button type="submit" class="btn btn-warning" id="edit-button">Chỉnh Sửa Sản Phẩm</button>
                         </div>
                     </form>
                 ';

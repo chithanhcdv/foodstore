@@ -41,7 +41,7 @@ require_once dirname(__DIR__) . '/../partials/header.php';
 
 <?php
 if(isset($_SESSION['username'], $_SESSION['id_user'])){
-    $query = "SELECT * FROM orders WHERE id_user =?";
+    $query = "SELECT * FROM orders WHERE id_user =? ORDER BY id_order DESC";
     try{
         $statement=$pdo->prepare($query);
         $statement->execute([$_SESSION['id_user']]);

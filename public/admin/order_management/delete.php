@@ -47,7 +47,7 @@ if (isset($_GET['id_order']) && is_numeric($_GET['id_order']) && ($_GET['id_orde
                     </div>
                     <div class="row">
                     <input type ="hidden" name="id_order" value="' . htmlspecialchars($_GET['id_order']) . '">                   
-                        <button class="btn btn-primary delete-button" type="submit">Xóa</button>
+                        <button class="btn btn-danger delete-button" type="submit">Xóa</button>
                     </div>
                     </form> 
                     ';

@@ -28,25 +28,42 @@ require_once dirname(__DIR__) . '/../partials/header.php'
     ];
 
 if(isset($_GET['name'])){
+    $searchTerm = '%' . $_GET['name'] . '%';
+    $count = 0;
     $query = "SELECT * FROM product WHERE name LIKE ?";
 
     try{
-        $statement = $pdo-> prepare($query);
-        $searchTerm = '%' . $_GET['name'] . '%';
+        $statement = $pdo->prepare($query);
         $statement->execute([$searchTerm]);
+        while($row=$statement->fetch()){
+            $count++;
+        }
         echo'
             <div class="col-lg-10 mt-4">
-                <h2>Tìm kiếm với từ khóa:'. ' ' . htmlspecialchars($_GET['name']) .'</h2>
-                <div class="product">
+                <h4>Kết quả tìm kiếm cho:'. ' ' . htmlspecialchars($_GET['name']) .' ('. $count.' kết quả)</h4> 
+                <hr>
+                <div class="product" id="search-product">
         ';
+        $statement = $pdo->prepare($query);
+        $statement->execute([$searchTerm]);
         while ($row = $statement->fetch()){         
                             echo '                     
                                     <div class="product-item">             
                                         <a href="/../product/item.php?name='. str_replace(' ', '-', strtr(strtolower((htmlspecialchars($row['name']))), $replace)) . '" class="product-link">                       
                                             <img src="'  . htmlspecialchars($row['image']) . '" alt="">
-                                            <p>  ' . htmlspecialchars($row['name']) . '</p>
-                                            <p>  ' . htmlspecialchars($row['price']) . '</p>
-                                        </a> 
+                                            <p>  ' . htmlspecialchars($row['name']) . '</p>';
+                                        if($row['sale'] > 0){
+                                            echo' 
+                                                <div class="price">
+                                                    <p> ' . number_format(htmlspecialchars($row['sale']), 0, ',', '.') . 'đ</p>
+                                                    <del>  ' . number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</del>
+                                                </div>
+                                            ';
+                                        } else{
+                                            echo '<p>  ' . number_format(htmlspecialchars($row['price']), 0, ',', '.') . 'đ</p>';
+                                        }   
+
+                            echo'       </a> 
                                         <form action="/../cart/cart.php" method="post" class="addToCart-form">                  
                                             <input type="hidden" class="id_product" value="' . htmlspecialchars($row['id_product']) . '" name="id_product">
                                             <input type="hidden" class="form-control quantity" value="1" name="quantity">

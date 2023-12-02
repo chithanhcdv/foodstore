@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
             $file_name = $_FILES['image']['name'];
             $file_tmp = $_FILES['image']['tmp_name'];
-            $target_directory = "C:/Cong Nghe Web/project/public/images/user/";
+            $target_directory = "C:/CT27106/foodstore/public/images/user/";
 
             // Đường dẫn đầy đủ của file đích
             $target_file = $target_directory . basename($file_name);

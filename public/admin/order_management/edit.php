@@ -84,7 +84,7 @@ if (isset($_GET['id_order']) && is_numeric($_GET['id_order']) && ($_GET['id_orde
                    
                         <input type ="hidden" name="id_order" class="form-control edit-order-input" value="' . htmlspecialchars($_GET['id_order']) . '">
                         <div class="edit-button">
-                            <button type="submit" class="btn btn-primary" id="edit-button">Chỉnh sửa đơn hàng</button>
+                            <button type="submit" class="btn btn-warning" id="edit-button">Chỉnh sửa đơn hàng</button>
                         </div>
                     </form>
                 ';

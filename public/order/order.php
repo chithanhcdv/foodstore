@@ -23,7 +23,7 @@ if(isset($_GET['id_user'], $_GET['total_amount'])){
                         FROM cart 
                         INNER JOIN user ON cart.id_user = user.id_user
                         WHERE cart.id_user=?";
-    $query2 = "SELECT cart.quantity, product.name, product.price, product.image
+    $query2 = "SELECT cart.quantity, product.name, product.price, product.image, product.sale
                         FROM cart
                         INNER JOIN product ON cart.id_product = product.id_product
                         WHERE cart.id_user=?";
@@ -83,13 +83,23 @@ if(isset($_GET['id_user'], $_GET['total_amount'])){
                             $statement2->execute([$_SESSION['id_user']]);
                             $row2 = $statement->fetch();
                             while ($row2 = $statement2->fetch()){
-                                $subtotal = $row2['price'] * $row2['quantity'];
+                                if($row2['sale'] > 0){
+                                    $subtotal = $row2['sale'] * $row2['quantity'];
+                                } else{
+                                    $subtotal = $row2['price'] * $row2['quantity'];
+                                }
+
                                 echo'
                                 <div class="order-item">
                                     <div>
                                         <p>'. htmlspecialchars($row2['name']) .' x '. htmlspecialchars($row2['quantity']) .'</p>
-                                        <div class="order-price">
-                                            <p>Đơn giá: '. number_format(htmlspecialchars($row2['price']), '0', ',', '.') .'đ</p>
+                                        <div class="order-price">';
+                                        if($row2['sale'] > 0){
+                                            echo '<p>Đơn giá: '. number_format(htmlspecialchars($row2['sale']), '0', ',', '.') .'đ</p>';
+                                        } else{
+                                            echo '<p>Đơn giá: '. number_format(htmlspecialchars($row2['price']), '0', ',', '.') .'đ</p>';
+                                        }
+                                        echo'    
                                             <p>Thành tiền: '. number_format(htmlspecialchars($subtotal), '0', ',', '.') .'đ</p>
                                         </div>
                                     </div>

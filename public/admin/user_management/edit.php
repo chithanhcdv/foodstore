@@ -59,7 +59,7 @@ if (isset($_GET['id_user']) && is_numeric($_GET['id_user']) && ($_GET['id_user']
                         <div class="mb-3">
                             <label> <strong>Số điện thoại</strong>
                             <span>
-                                <input name="new_phone" type="tel" class="form-control edit-user-input" value="' . htmlspecialchars($row['phone']) . '" pattern="[0-9]{10}" maxlength="10" title="Số điện thoại phải bao gồm 10 số" required>
+                                <input name="new_phone" type="tel" class="form-control edit-user-input" value="' . '0' . htmlspecialchars($row['phone']) . '" pattern="[0-9]{10}" maxlength="10" title="Số điện thoại phải bao gồm 10 số" required>
                             </span>
                             </label>
                         </div>
@@ -84,7 +84,7 @@ if (isset($_GET['id_user']) && is_numeric($_GET['id_user']) && ($_GET['id_user']
                         </div>
                         <input type ="hidden" name="id_user" class="form-control edit-user-input" value="' . htmlspecialchars($_GET['id_user']) . '">
                         <div class="edit-button">
-                            <button type="submit" class="btn btn-primary" id="edit-button">Chỉnh sửa người dùng</button>
+                            <button type="submit" class="btn btn-warning" id="edit-button">Chỉnh sửa người dùng</button>
                         </div>
                     </form>
                 ';
@@ -108,7 +108,7 @@ if (isset($_GET['id_user']) && is_numeric($_GET['id_user']) && ($_GET['id_user']
     $file_name = $_FILES['image']['name'];
     $file_tmp = $_FILES['image']['tmp_name'];
     
-    $target_directory = "C:/Cong Nghe Web/project/public/images/user/";
+    $target_directory = "C:/CT27106/foodstore/public/images/user/";
     
     // Đường dẫn đầy đủ của file đích
     $target_file = $target_directory . basename($file_name);

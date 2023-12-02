@@ -15,7 +15,7 @@ require_once __DIR__ . '/../partials/db_connect.php';
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel='shortcut icon' href="/../images/admin/icon.jpg"/>
+  <link rel='shortcut icon' href="/../images/admin/admin.png"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="/../admin/css/style.css">
@@ -27,9 +27,11 @@ require_once __DIR__ . '/../partials/db_connect.php';
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">
-                        <a href="/../admin">
-                        <img src="/../images/admin/icon.jpg" alt="" class="logo">
-                        </a>
+                        <div id="logo">
+                            <a href="/../admin">
+                                <img src="/../images/admin/admin.png" alt="" class="logo">
+                            </a>
+                        </div>
                     </div>                 
                     <div class="col-md-6">
                         <div class="input-group mb-3 search-input">
